@@ -13,11 +13,44 @@
 You are going to use chat gpt to help generate lists of data for you to work with.
 
 Choose a topic to create a  data class on
-1. Create the class
-2. Create the fields
-3. Create the Constructor
-4. Create the Properties
-5. In your code create at least 2 collections
+1. Create a class called `Item`
+    * Give it 4 fields
+        1. `string _name` <--- This is for the name of the item
+        2. `string _desciption` <---- Discription of the item
+        3. `double _price` <--------
+        4. `double _discount` <------
+    * Create 2 Constructors.
+        1. One that takes all fields as arguments
+        2. One that takes only a name and a price.  
+            **Set description to an empty string, and discount to 0**
+    * Create properties for all 4 fields
+        1. Get and Set for Name
+        2. Get and Set for Description
+        3. Get and Set for Price
+            * Validate the price to make sure its above 0
+        4. Get and Set for Discount
+            * Validate the discount to make sure its above 0 and below 1. ( You wouldn't want someone to have a discount of 150%)
+    * Create 2 Methods
+        1. `public double DiscountedAmount()`
+            * This should return the the the dollar amount of the discount
+            * Ex : If the amount is 10, and the discount is .1 ( 10% ) then the method should return 1 ( 1 dollar )
+
+        ```
+           public double DiscountedAmount()
+        {
+            return Price * Discount;
+        } // DiscountedAmount()
+
+        public double CaculateTotalPrice()
+        {
+            return Price - DiscountedAmount();
+        } // CalculateTotalPrice()
+
+        public override string ToString()
+        {
+            return $"Name: {_name} - Price: {_price.ToString("c")} - Discount:  {_discount.ToString("c")} - Total Price: {_price.ToString("c")}";
+        } // ToString()
+        ```
 
 Start Xaml Code
 ```html
@@ -47,11 +80,6 @@ Start Xaml Code
     </Canvas>
 
 ```
-
-
-
-
-
 
 1. Create a new C# class called `Item`.
 
@@ -147,6 +175,7 @@ Start Xaml Code
 
 
 ---
+# Final Code
 
 `Item.cs`
 
