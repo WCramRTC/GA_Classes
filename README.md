@@ -12,6 +12,12 @@
 ***Required ChatGPT Acction***  
 You are going to use chat gpt to help generate lists of data for you to work with.
 
+1. Create a WPF appliation with the name of GA_***YourName***_Classes
+2. Replace `<Grid>` with our new xaml code. And double click on the 2 buttons and lbInventor to create events. 
+
+
+
+
 Choose a topic to create a  data class on
 1. Create a class called `Item`
     * Give it 4 fields

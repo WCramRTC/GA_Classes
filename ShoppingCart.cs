@@ -8,19 +8,25 @@ namespace GA_Classes
 {
     public class ShoppingCart
     {
+        // Fields
         string _storeName;
         List<Item> _itemsInCart;
         double _tax;
 
+        // Constructor
         public ShoppingCart(string storeName)
         {
             _storeName = storeName;
+
+            // Instantiated
+            // Creating a new INSTANCE of an object
+            // use the new keyword, it's creating a new INSTNACE of an object
             _itemsInCart = new List<Item>();
             _tax = .1;
         } // ShoppingCart()
 
 
-
+        // Abstraction
         public void AddItem(Item item)
         {
             _itemsInCart.Add(item);
@@ -51,7 +57,7 @@ namespace GA_Classes
             double sum = 0;
             foreach (Item item in _itemsInCart)
             {
-                sum += item.Price;
+                sum += item.CalculateTotalPrice();
             }
 
             return sum;

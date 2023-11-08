@@ -36,14 +36,25 @@ namespace GA_Classes
 
             cart = new ShoppingCart("Wills Mart");
 
+ 
+
             lbShopping.ItemsSource = cart.ItemsInCart;
+
+            //Item fudge = new Item("Granny Smith", "Tart", 3, .5);
+            //MessageBox.Show(fudge.DiscountedAmount().ToString());
+            //Item apple = new Item("Granny Smith", "Tart", 1.50, .1);
+
+
+
 
         } // MainWindow
 
         private void lbInventory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // I Am GRABBING the selected INDEX of the object
             int selectedIndex = lbInventory.SelectedIndex;
             Item selectedItem = inventory[selectedIndex];
+            // Item SelectedItem = iventory0 = new Item("Yogurt", "Premium cut", 17.56, 0.2), 
 
             // Clear RichTextBox
             rtbItemDescription.Text = "";
@@ -53,8 +64,13 @@ namespace GA_Classes
             rtbItemDescription.Text += $"Desciption: {selectedItem.Description}\n";
             rtbItemDescription.Text += $"Price: {selectedItem.Price.ToString("c")}\n";
             rtbItemDescription.Text += $"Discount: {selectedItem.DiscountedAmount().ToString("c")}\n";
-            rtbItemDescription.Text += $"Total Price: {selectedItem.CaculateTotalPrice().ToString("c")}\n";
+            rtbItemDescription.Text += $"Total Price: {selectedItem.CalculateTotalPrice().ToString("c")}\n";
 
+        //Name: Salt
+        //Desciption: Balsamic
+        //Price: $18.74
+        //Discount: $4.50
+        //Total Price: $14.24
 
         } // lbInventory_SelectionChanged
 
@@ -81,8 +97,8 @@ namespace GA_Classes
         {
             inventory = new List<Item>
         {
-            new Item("Yogurt", "Premium cut", 17.56, 0.2),
-            new Item("Salt", "Soothing blend", 13.15, 0.64),
+            new Item("Yogurt", "Premium cut", 17.56, 0.2), 
+            new Item("Salt", "Soothing blend", 13.15, 0.64), 
             new Item("Strawberries", "Crisp and fresh", 6.95, 0.18),
             new Item("Tomatoes", "Local farm product", 16.43, 0.57),
             new Item("Fish", "Starchy and filling", 1.68, 0.01),
