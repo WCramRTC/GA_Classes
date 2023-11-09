@@ -128,7 +128,7 @@ namespace GA_Classes
         // OVERRIDE ToString()
         public override string ToString()
         {
-            // Name: Granny Smith - Price: $1.50 - Discount: $.
+            // Name: Granny Smith - Price: $1.50 - Discount: $0.15 - Total Price: $1.35
             return $"Name: {_name} - Price: {_price.ToString("c")} - Discount:  {DiscountedAmount().ToString("c")} - Total Price: {CalculateTotalPrice().ToString("c")}";
         } // ToString()
         //public override string ToString()

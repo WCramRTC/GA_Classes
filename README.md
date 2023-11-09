@@ -9,14 +9,10 @@
 
 ## Assignment
 
-***Required ChatGPT Acction***  
-You are going to use chat gpt to help generate lists of data for you to work with.
-
 1. Create a WPF appliation with the name of GA_***YourName***_Classes
-2. Replace `<Grid>` with our new xaml code. And double click on the 2 buttons and lbInventor to create events. 
+2. Replace `<Grid>` with our new xaml code (Located Below). And double click on the 2 buttons and `lbInventor` to create events. 
 
 
-Choose a topic to create a  data class on
 1. Create a class called `Item`
     * Give it 4 [fields](Information/Fields.md)
         1. `string _name` <--- This is for the name of the item
@@ -28,34 +24,22 @@ Choose a topic to create a  data class on
         2. One that takes only a name and a price.  
             **Set description to an empty string, and discount to 0**
     * Create [Properties](Information/Properties.md) for all 4 fields
-        1. Get and Set for Name
-        2. Get and Set for Description
-        3. Get and Set for Price
-            * Validate the price to make sure its above 0
-        4. Get and Set for Discount
-            * Validate the discount to make sure its above 0 and below 1. ( You wouldn't want someone to have a discount of 150%)
+        1. Get and Set for `Name`, `Description`, `Price`, and `Discount`
+            * Validate the `Price` to make sure its above 0
+            * Validate the `Discount` to make sure its above 0 and below 1. ( You wouldn't want someone to have a discount of 150%)
     * Create 2 [Methods](Information/Methods.md)
         1. `public double DiscountedAmount()`
             * This should return the the the dollar amount of the discount
             * Ex : If the amount is 10, and the discount is .1 ( 10% ) then the method should return 1 ( 1 dollar )
-    * Override the [ToString()](Information/OverrideToString.md)
+        2. `public double CaculateTotalPrice()`
+            * This should return the price minus the DiscountedAmount();
+            
+    * Override the [ToString()](Information/OverrideToString.md)  
+        * This should display the name, price, Discount, and Total Price
+        * Ex:  Name: Granny Smith - Price: $1.50 - Discount: $0.15 - Total Price: $1.35  
+        * Make sure to use `.ToString("c");` on your prices to format it to currency
+            
 
-        ```
-           public double DiscountedAmount()
-        {
-            return Price * Discount;
-        } // DiscountedAmount()
-
-        public double CaculateTotalPrice()
-        {
-            return Price - DiscountedAmount();
-        } // CalculateTotalPrice()
-
-        public override string ToString()
-        {
-            return $"Name: {_name} - Price: {_price.ToString("c")} - Discount:  {_discount.ToString("c")} - Total Price: {_price.ToString("c")}";
-        } // ToString()
-        ```
 
 Start Xaml Code
 ```html
