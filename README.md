@@ -18,26 +18,27 @@ You are going to use chat gpt to help generate lists of data for you to work wit
 
 Choose a topic to create a  data class on
 1. Create a class called `Item`
-    * Give it 4 fields
+    * Give it 4 [fields](Information/Fields.md)
         1. `string _name` <--- This is for the name of the item
         2. `string _desciption` <---- Discription of the item
         3. `double _price` <--------
         4. `double _discount` <------
-    * Create 2 Constructors.
+    * Create 2 [Constructors](Information/Constructor.md).
         1. One that takes all fields as arguments
         2. One that takes only a name and a price.  
             **Set description to an empty string, and discount to 0**
-    * Create properties for all 4 fields
+    * Create [Properties](Information/Properties.md) for all 4 fields
         1. Get and Set for Name
         2. Get and Set for Description
         3. Get and Set for Price
             * Validate the price to make sure its above 0
         4. Get and Set for Discount
             * Validate the discount to make sure its above 0 and below 1. ( You wouldn't want someone to have a discount of 150%)
-    * Create 2 Methods
+    * Create 2 [Methods](Information/Methods.md)
         1. `public double DiscountedAmount()`
             * This should return the the the dollar amount of the discount
             * Ex : If the amount is 10, and the discount is .1 ( 10% ) then the method should return 1 ( 1 dollar )
+    * Override the [ToString()](Information/OverrideToString.md)
 
         ```
            public double DiscountedAmount()
