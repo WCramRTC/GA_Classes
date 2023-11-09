@@ -61,4 +61,4 @@ You Will need to resize the MainWindow. Click on the top black bar, and then dra
     } // btnTotalTransaction_Click
 ```
 
-## On To - [Step2 Item Class](Step2_ItemClass.md)
+## Click Here for [Step2 - Item Class](Step2_ItemClass.md)
