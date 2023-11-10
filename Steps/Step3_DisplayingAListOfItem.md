@@ -1,5 +1,7 @@
 ﻿# Step 3 - Display A List Of Item
 
+This step introduces working with a List of Items. This will mimic having an inventory or database of items to work with.
+
 Now we're going back to our `MainWindow.xaml` and `MainWindow.xaml.cs` and use our new `Item` class we constructed to display an inventory. 
 
 ![Start Inventory](Images/Start_Inventory.png)
