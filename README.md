@@ -1,10 +1,10 @@
 # GA_Classes
 
-This assignment will walk you through creating classes ( including explinations about fields, constructors, properties, and methods ). 
+This assignment will walk you through creating classes ( including explanations about fields, constructors, properties, and methods ). 
 
 You will then add items to a List to replicate a inventory. 
 
-Following this you will create another class that will recplicate an online shopping cart that will hold items you wish to purchase. 
+Following this you will create another class that will replicate an on line shopping cart that will hold items you wish to purchase. 
 
 Followed by totaling up the cost and displaying everything as a formatted receipt.
 
@@ -16,15 +16,15 @@ Followed by totaling up the cost and displaying everything as a formatted receip
 2. [Step2 Item Class](Steps/Step2_ItemClass.md)  
 3. [Step3 Displaying A List Of Item](Steps/Step3_DisplayingAListOfItem.md)  
 4. [Step4 Shopping Cart Class](Steps/Step4_ShoppingCartClass.md)  
-5. [Step5 Displaying Our Reciept](Steps/Step5_DisplayingOurReciept.md)  
+5. [Step5 Displaying Our Receipt](Steps/Step5_DisplayingOurReceipt.md)  
 
 ---
 
-### Below are the steps needed to complete the assignment if you didn't want to go thorugh the Step By Step process.
+### Below are the steps needed to complete the assignment if you didn't want to go through the Step By Step process.
 
 ---
 ## [Step1 Setting Up](Steps/Step1_SettingUp.md)
-1. Create a WPF appliation with the name of GA_***YourName***_Classes
+1. Create a WPF application with the name of GA_***YourName***_Classes
 2. Replace `<Grid>` with our new xaml code (Located Below). And double click on the 2 buttons and `lbInventor` to create events. 
 
 ---
@@ -32,7 +32,7 @@ Followed by totaling up the cost and displaying everything as a formatted receip
 1. Create a class called `Item`
     * Give it 4 [fields](Information/Fields.md)
         1. `string _name` <--- This is for the name of the item
-        2. `string _desciption` <---- Discription of the item
+        2. `string _desciption` <---- Description of the item
         3. `double _price` <--------
         4. `double _discount` <------
     * Create 2 [Constructors](Information/Constructor.md).
@@ -45,7 +45,7 @@ Followed by totaling up the cost and displaying everything as a formatted receip
             * Validate the `Discount` to make sure its above 0 and below 1. ( You wouldn't want someone to have a discount of 150%)
     * Create 2 [Methods](Information/Methods.md)
         1. `public double DiscountedAmount()`
-            * This should return the the the dollar amount of the discount
+            * This should return the dollar amount of the discount
             * Ex : If the amount is 10, and the discount is .1 ( 10% ) then the method should return 1 ( 1 dollar )
         2. `public double CaculateTotalPrice()`
             * This should return the price minus the DiscountedAmount();
@@ -62,7 +62,7 @@ Followed by totaling up the cost and displaying everything as a formatted receip
 1. Create a global `List<Item> inventory`.
 2. Copy and paste the included `PreloadInventory()` method.
 3. In your `MainWindow()` method call the `PreloadInventory()` method.
-4. Assign your inventory list the the `lbInventory.ItemsSource`.
+4. Assign your inventory list the `lbInventory.ItemsSource`.
 5. In your `lbInventory_SelectionChange` event, have the information about the item appear in the `rtbItemDescription` appear.
 
 ![Display Full Inventory](Steps/Images/DisplayFullInventory.gif)
@@ -88,7 +88,7 @@ Followed by totaling up the cost and displaying everything as a formatted receip
         * `TotalBeforeTax()` - Sum all items in cart.CalculateTotalPrice(), return sum.
         * `TaxOnTotal()` - Return `TotalBeforeTax() * Tax`
         * `TotalPrice()` - Return `TotalBeforeTax() + TaxOnTotal()`
-        * `Reciept()` - Return a formatted string of a reciept.
+        * `Receipt()` - Return a formatted string of a receipt.
 
         `Example`
         > Welcome to Wills Mart  
@@ -104,11 +104,11 @@ Followed by totaling up the cost and displaying everything as a formatted receip
         > Total Price : $13.25  
 
 ---
-## [Step5 Displaying Our Reciept](Steps/Step5_DisplayingOurReciept.md)
+## [Step5 Displaying Our Receipt](Steps/Step5_DisplayingOurReceipt.md)
 
 1. In your `btnAddToCart_Click` event, when the user selects an item and clicks "Add To Cart", the item shows up in the shopping cart. It refreshes to show the new item.  
     1. `lbShopping.Items.Refresh()` used to refresh cart. Put at end of method.
-2. In your `btnTotalTransaction_Click`, call the `cart.Reciept()` and assign the string the `rtbReciept.Text` property.
+2. In your `btnTotalTransaction_Click`, call the `cart.Receipt()` and assign the string the `rtbReceipt.Text` property.
 
 ---
 
@@ -135,12 +135,12 @@ Start Xaml Code
         <RichTextBox Height="373" Width="423" Canvas.Left="726" Canvas.Top="39" HorizontalAlignment="Left" VerticalAlignment="Center">
             <FlowDocument>
                 <Paragraph>
-                    <Run x:Name="rtbReciept" />
+                    <Run x:Name="rtbReceipt" />
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
         <Label Content="Shopping Cart" Canvas.Left="416" Canvas.Top="8" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Label Content="Reciept" Canvas.Left="726" Canvas.Top="8" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Label Content="Receipt" Canvas.Left="726" Canvas.Top="8" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Button x:Name="btnTotalTransaction" Content="Total Transaction" Canvas.Left="416" Canvas.Top="383" HorizontalAlignment="Center" VerticalAlignment="Top" Width="293" Height="31"  />
 
     </Canvas>
@@ -381,27 +381,27 @@ Start Xaml Code
         } // TotalPrice()
 
 
-        public string Reciept()
+        public string Receipt()
         {
             DateTime dto = DateTime.Now;
-            string fullReciept = "";
+            string fullReceipt = "";
 
-            fullReciept += $"Welcome to {_storeName}\n";
-            fullReciept += $"Date: {dto.ToShortDateString()} {dto.ToLongTimeString()}";
-            fullReciept += $"\n-----\n\n";
-            fullReciept += $"Items\n";
+            fullReceipt += $"Welcome to {_storeName}\n";
+            fullReceipt += $"Date: {dto.ToShortDateString()} {dto.ToLongTimeString()}";
+            fullReceipt += $"\n-----\n\n";
+            fullReceipt += $"Items\n";
             foreach (Item item in _itemsInCart)
             {
-                fullReciept += $"{item.ToString()}\n";
+                fullReceipt += $"{item.ToString()}\n";
             }
 
-            fullReciept += $"\n-----\n\n";
-            fullReciept += $"Number Of Items : {_itemsInCart.Count}\n";
-            fullReciept += $"Total Before Tax : {TotalBeforeTax().ToString("c")}\n";
-            fullReciept += $"Tax : {TaxOnTotal().ToString("c")}\n";
-            fullReciept += $"Total Price : {TotalPrice().ToString("c")}\n";
-            return fullReciept;
-        } // Reciept
+            fullReceipt += $"\n-----\n\n";
+            fullReceipt += $"Number Of Items : {_itemsInCart.Count}\n";
+            fullReceipt += $"Total Before Tax : {TotalBeforeTax().ToString("c")}\n";
+            fullReceipt += $"Tax : {TaxOnTotal().ToString("c")}\n";
+            fullReceipt += $"Total Price : {TotalPrice().ToString("c")}\n";
+            return fullReceipt;
+        } // Receipt
 
     } // class
 ```
@@ -462,7 +462,7 @@ Start Xaml Code
 
         private void btnTotalTransaction_Click(object sender, RoutedEventArgs e)
         {
-            rtbReciept.Text = cart.Reciept();
+            rtbReceipt.Text = cart.Receipt();
         } // btnTotalTransaction_Click
 
         // PreloadInventory

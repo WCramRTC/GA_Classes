@@ -9,7 +9,7 @@ Now we're going back to our `MainWindow.xaml` and `MainWindow.xaml.cs` and use o
 
 ## 1. Create a new Item in MainWindow()
 
-1. Lets start off by testing out our our new class. In the `MainWindow()` method, lets create a `new Item`.
+1. Lets start off by testing out our new class. In the `MainWindow()` method, lets create a `new Item`.
 
 ```csharp
 
@@ -40,7 +40,7 @@ If it works properly, you should see the name you passed into your item.
 2. Now that this is working, lets make it look a little cleaner. Let's format our code so it displays all the information clearly.
 
 > Name: Apple  
-> Desciption: Granny Smith  
+> Description: Granny Smith  
 > Price: $1.50  
 > Discount: $0.15  
 > Total Price: $1.35  
@@ -56,7 +56,7 @@ public MainWindow()
 
 	// Formatting our Code
     rtbItemDescription.Text += $"Name: {apple.Name}\n";
-    rtbItemDescription.Text += $"Desciption: {apple.Description}\n";
+    rtbItemDescription.Text += $"Description: {apple.Description}\n";
     rtbItemDescription.Text += $"Price: {apple.Price.ToString("c")}\n";
     rtbItemDescription.Text += $"Discount: {apple.DiscountedAmount().ToString("c")}\n";
     rtbItemDescription.Text += $"Total Price: {apple.CalculateTotalPrice().ToString("c")}\n";
@@ -74,7 +74,7 @@ Here we have formatted the code so it's easier to read. But this is all in main.
         rtbItemDescription.Text = "";
 
         rtbItemDescription.Text += $"Name: {apple.Name}\n";
-        rtbItemDescription.Text += $"Desciption: {apple.Description}\n";
+        rtbItemDescription.Text += $"Description: {apple.Description}\n";
         rtbItemDescription.Text += $"Price: {apple.Price.ToString("c")}\n";
         rtbItemDescription.Text += $"Discount: {apple.DiscountedAmount().ToString("c")}\n";
         rtbItemDescription.Text += $"Total Price: {apple.CalculateTotalPrice().ToString("c")}\n";
@@ -85,7 +85,7 @@ Here we have formatted the code so it's easier to read. But this is all in main.
 
 ## Create a list of items
 
-1. Globally delcare a list of Items in our `MainWindow.xaml.cs`
+1. Globally declare a list of Items in our `MainWindow.xaml.cs`
 
 2. In your MainWindow() add two new Items to that list. And attach it to your `lbInventory.ItemsSource`.
 
@@ -135,7 +135,7 @@ To give our app the ability to display information we only need to tweak two lin
             rtbItemDescription.Text = "";
             
             rtbItemDescription.Text += $"Name: {selectedItem.Name}\n";
-            rtbItemDescription.Text += $"Desciption: {selectedItem.Description}\n";
+            rtbItemDescription.Text += $"Description: {selectedItem.Description}\n";
             rtbItemDescription.Text += $"Price: {selectedItem.Price.ToString("c")}\n";
             rtbItemDescription.Text += $"Discount: {selectedItem.DiscountedAmount().ToString("c")}\n";
             rtbItemDescription.Text += $"Total Price: {selectedItem.CalculateTotalPrice().ToString("c")}\n";
@@ -214,7 +214,7 @@ Place it outside of any other methods, but inside the class.
 ```
 
 And now inside of our MainWidnow() method lets refactor some code.
-Call our new method, PreloadInventory. It initalizes a new List<Item> and fills it with items. Just make sure your List<Item> is names `inventory`.
+Call our new method, PreloadInventory. It initializes a new List<Item> and fills it with items. Just make sure your List<Item> is names `inventory`.
 
 Then we attach to the ItemsSource. If everything works properly, you should now have a full inventory where you can see the item descriptions.
 
@@ -270,7 +270,7 @@ Then we attach to the ItemsSource. If everything works properly, you should now 
             rtbItemDescription.Text = "";
             
             rtbItemDescription.Text += $"Name: {selectedItem.Name}\n";
-            rtbItemDescription.Text += $"Desciption: {selectedItem.Description}\n";
+            rtbItemDescription.Text += $"Description: {selectedItem.Description}\n";
             rtbItemDescription.Text += $"Price: {selectedItem.Price.ToString("c")}\n";
             rtbItemDescription.Text += $"Discount: {selectedItem.DiscountedAmount().ToString("c")}\n";
             rtbItemDescription.Text += $"Total Price: {selectedItem.CalculateTotalPrice().ToString("c")}\n";

@@ -1,6 +1,6 @@
 ﻿# Step 4 - Shopping Cart Class
 
-In this step we learn how to next items In items. We create a new class `ShoppingCart`, and add a `List<Item>` to it to replicate how an online shopping cart will work. We use it to hold a seperate list of items ( but which ***Reference*** the same items in memory. ). Then we create methods to calculate the total of our cart, and display all the infomation as a formatted reciept.
+In this step we learn how to next items In items. We create a new class `ShoppingCart`, and add a `List<Item>` to it to replicate how an online shopping cart will work. We use it to hold a seperate list of items ( but which ***Reference*** the same items in memory. ). Then we create methods to calculate the total of our cart, and display all the infomation as a formatted receipt.
 
 ## 1. Create a new class, ShoppingCart
 
@@ -110,43 +110,43 @@ In this step we learn how to next items In items. We create a new class `Shoppin
             } // TotalPrice()
         ```
 
-    5. ***Reciept***
-        * The final method will format a string that we will use to display the information as a reciept.
+    5. ***Receipt***
+        * The final method will format a string that we will use to display the information as a receipt.
 
         ```csharp
-            public string Reciept()
+            public string Receipt()
             {
                 // This C# object will help us display the exact time the recipet is processed
                 DateTime dto = DateTime.Now;
                 // Creating an empty string to start formatting.
-                string fullReciept = "";
+                string fullReceipt = "";
 
                 // Concatenating our store name into our recipet
-                fullReciept += $"Welcome to {_storeName}\n";
-                // Displaying the current day and time on the reciept
-                fullReciept += $"Date: {dto.ToShortDateString()} {dto.ToLongTimeString()}";
-                fullReciept += $"\n-----\n\n";
-                fullReciept += $"Items\n";
+                fullReceipt += $"Welcome to {_storeName}\n";
+                // Displaying the current day and time on the receipt
+                fullReceipt += $"Date: {dto.ToShortDateString()} {dto.ToLongTimeString()}";
+                fullReceipt += $"\n-----\n\n";
+                fullReceipt += $"Items\n";
 
                 // Using a foreach loop, we go through the items in our cart and concatenate the .ToString() to our recipet string. This will show every item in our cart.
                 foreach (Item item in _itemsInCart)
                 {
-                    fullReciept += $"{item.ToString()}\n";
+                    fullReceipt += $"{item.ToString()}\n";
                 }
 
                 // Displays all the final calculations and the final total
-                fullReciept += $"\n-----\n\n";
-                fullReciept += $"Number Of Items : {_itemsInCart.Count}\n";
-                fullReciept += $"Total Before Tax : {TotalBeforeTax().ToString("c")}\n";
-                fullReciept += $"Tax : {TaxOnTotal().ToString("c")}\n";
-                fullReciept += $"Total Price : {TotalPrice().ToString("c")}\n";
-                return fullReciept;
-            } // Reciept
+                fullReceipt += $"\n-----\n\n";
+                fullReceipt += $"Number Of Items : {_itemsInCart.Count}\n";
+                fullReceipt += $"Total Before Tax : {TotalBeforeTax().ToString("c")}\n";
+                fullReceipt += $"Tax : {TaxOnTotal().ToString("c")}\n";
+                fullReceipt += $"Total Price : {TotalPrice().ToString("c")}\n";
+                return fullReceipt;
+            } // Receipt
         ```
 
 With our `ShoppingCart` class completely built, our final step is to add it to our application.
 
-# The Final [Step5 Displaying Our Reciept](Step5_DisplayingOurReciept.md)
+# The Final [Step5 Displaying Our Receipt](Step5_DisplayingOurReceipt.md)
 
 ---
 
@@ -222,27 +222,27 @@ With our `ShoppingCart` class completely built, our final step is to add it to o
         } // TotalPrice()
 
 
-        public string Reciept()
+        public string Receipt()
         {
             DateTime dto = DateTime.Now;
-            string fullReciept = "";
+            string fullReceipt = "";
 
-            fullReciept += $"Welcome to {_storeName}\n";
-            fullReciept += $"Date: {dto.ToShortDateString()} {dto.ToLongTimeString()}";
-            fullReciept += $"\n-----\n\n";
-            fullReciept += $"Items\n";
+            fullReceipt += $"Welcome to {_storeName}\n";
+            fullReceipt += $"Date: {dto.ToShortDateString()} {dto.ToLongTimeString()}";
+            fullReceipt += $"\n-----\n\n";
+            fullReceipt += $"Items\n";
             foreach (Item item in _itemsInCart)
             {
-                fullReciept += $"{item.ToString()}\n";
+                fullReceipt += $"{item.ToString()}\n";
             }
 
-            fullReciept += $"\n-----\n\n";
-            fullReciept += $"Number Of Items : {_itemsInCart.Count}\n";
-            fullReciept += $"Total Before Tax : {TotalBeforeTax().ToString("c")}\n";
-            fullReciept += $"Tax : {TaxOnTotal().ToString("c")}\n";
-            fullReciept += $"Total Price : {TotalPrice().ToString("c")}\n";
-            return fullReciept;
-        } // Reciept
+            fullReceipt += $"\n-----\n\n";
+            fullReceipt += $"Number Of Items : {_itemsInCart.Count}\n";
+            fullReceipt += $"Total Before Tax : {TotalBeforeTax().ToString("c")}\n";
+            fullReceipt += $"Tax : {TaxOnTotal().ToString("c")}\n";
+            fullReceipt += $"Total Price : {TotalPrice().ToString("c")}\n";
+            return fullReceipt;
+        } // Receipt
 
     } // class
 ```

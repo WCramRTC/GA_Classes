@@ -1,4 +1,4 @@
-﻿# Step 5 - Displaying Our Reciept
+﻿# Step 5 - Displaying Our Receipt
 
 With our final step, were going to 
 * Add a single instance of a `ShoppingCart`
@@ -78,14 +78,14 @@ We can now add items to our shopping cart!
 
 ## Final Step - Displaying the Transaction 
 
-And our final method, because we have built our `ShoppingCart` class to do all of our calculations and print the recipet, it is very simple.
+And our final method, because we have built our `ShoppingCart` class to do all of our calculations and print the receipt, it is very simple.
 
-In our final click event, `btnTotalTransaction_Click` simply call the `cart.Reciept()` method, which returns a fully formatted reciept, and assign it to our `rtbReciept.Text` rich text box.
+In our final click event, `btnTotalTransaction_Click` simply call the `cart.Receipt()` method, which returns a fully formatted receipt, and assign it to our `rtbReceipt.Text` rich text box.
 
 ```csharp
     private void btnTotalTransaction_Click(object sender, RoutedEventArgs e)
     {
-        rtbReciept.Text = cart.Reciept();
+        rtbReceipt.Text = cart.Receipt();
     } // btnTotalTransaction_Click
 ```
 

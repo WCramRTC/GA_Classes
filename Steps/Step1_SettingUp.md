@@ -1,7 +1,7 @@
 ﻿# Step 1 - Setting up the Project
 
 1. Create a new Project with the name of GA_***YourName***_Classes
-2. Replace the starter xaml with the following code, everything the the middle of the MainPage.xaml.
+2. Replace the starter xaml with the following code, everything the middle of the MainPage.xaml.
 
 Start Xaml Code
 ```html
@@ -20,12 +20,12 @@ Start Xaml Code
         <RichTextBox Height="373" Width="423" Canvas.Left="726" Canvas.Top="39" HorizontalAlignment="Left" VerticalAlignment="Center">
             <FlowDocument>
                 <Paragraph>
-                    <Run x:Name="rtbReciept" />
+                    <Run x:Name="rtbReceipt" />
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
         <Label Content="Shopping Cart" Canvas.Left="416" Canvas.Top="8" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Label Content="Reciept" Canvas.Left="726" Canvas.Top="8" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Label Content="Receipt" Canvas.Left="726" Canvas.Top="8" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Button x:Name="btnTotalTransaction" Content="Total Transaction" Canvas.Left="416" Canvas.Top="383" HorizontalAlignment="Center" VerticalAlignment="Top" Width="293" Height="31"  />
 
     </Canvas>

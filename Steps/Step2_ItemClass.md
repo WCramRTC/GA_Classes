@@ -9,7 +9,7 @@
         3. Properties
         4. Class methods
 
-> We will discuss all of these for our item class in this step. More information can be found in the provided links to the pages on the seperate parts.
+> We will discuss all of these for our item class in this step. More information can be found in the provided links to the pages on the separate parts.
 
 
 In this step we are going to create our class, `Item`. This is going to represent an item in a grocery store. 
@@ -58,7 +58,7 @@ public class Item {
 
 Fields represent the data associated with our object. They are the same as the variable we have been using, but all related to our one object.
 
-> For our Item, were treating it as if it's a grocery story item. And potentially for our online store. Becuase of this we are creating 4 seperate fields.
+> For our Item, were treating it as if it's a grocery story item. And potentially for our on line store. Because of this we are creating 4 separate fields.
 > * Name - The name of our product
 > * Description - The short description of our product
 > * Price - The Current Price of our Product
@@ -133,7 +133,7 @@ We are now going to ***Add Another Constructor***.
 
 > Overload: Creating multiple methods (or constructors) with the same name but different types of parameters is called ***overloading.***
 
-2. Create another constructor that takes a name and price paremeter, but sets the description to "", and discount to 0.
+2. Create another constructor that takes a name and price parameter, but sets the description to "", and discount to 0.
 
 `Constructors`  
 ***`Code To Add`***
@@ -179,11 +179,11 @@ You now have two options for Constructors when creating a `new Item()`.
 
 If fields are the information related to our `Item`, the properties allow access to that information.
 
-We might now always want others to change or even see information assoicated with our class.
+We might now always want others to change or even see information associated with our class.
 
 ### ***Example***
 ```csharp
-// Widly dangerous becuase anyone could change it
+// Wildly dangerous because anyone could change it
 public string socialSecurityNumber;
 ```
 
@@ -194,7 +194,7 @@ The format for a property is
 > `get` - if you want to allow the user to read the info  
 > `set` - if you want to allow the user to change the info  
 
-* Below we see we give the access modifer of `public`. This is most common, but can be changed if needed. 
+* Below we see we give the access modifier of `public`. This is most common, but can be changed if needed. 
 * Then the return type. Since our `_name` field is a `string` we are returning a `string` type. 
 * Next is the `Name`. Notice, it's the same as our field but has no underscore and is upper case.
     * Field: `_name`
@@ -203,7 +203,7 @@ The format for a property is
 `Properties`  
 ***`Code To Add`***
 ```csharp
-    // access modifer - Return Type - Name ( Same as the Field )
+    // access modifier - Return Type - Name ( Same as the Field )
     // DOES NOT TAKE PARAMETERS
     public string Name
     {
@@ -215,7 +215,7 @@ Now we are going to add our keywords `get` and `set` to our `Name` property.
 
 ### Get
 
-The `get` keyword is placed inside our property, followed by curly braces. This also has no parenthese.
+The `get` keyword is placed inside our property, followed by curly braces. This also has no parentheses.
 
 Inside of our get we type `return _name`. This is returning the value associated with our field `_name`.
 
@@ -273,7 +273,7 @@ That's why we will add a `set`.
     }
 ```
 
-Our `set` is like our `get`, the keyword and curly braces, {}. Inside we do our field name followed by the keyworld value.
+Our `set` is like our `get`, the keyword and curly braces, {}. Inside we do our field name followed by the keyword value.
 > `set { _fieldName = value; }`
 
 The `value` keyword represents whatever is being assigned to the variable.
@@ -316,7 +316,7 @@ Now we are going to want to add a property for our price and discount, but we ar
     } // Price
 ```
 
-Notice, our property is almost the same as before, but inside of our set we did an `if statement` around our `_price = value;`. This if statement, using the `value` keyword checks to see if the value being assigned is greater than 0, or not a negative number. If it's a postive number, the value will change, otherwise nothing happens.
+Notice, our property is almost the same as before, but inside of our set we did an `if statement` around our `_price = value;`. This if statement, using the `value` keyword checks to see if the value being assigned is greater than 0, or not a negative number. If it's a positive number, the value will change, otherwise nothing happens.
 
 Let's do the same for discount, but since we want our discount number to be between 0 and 1, we will set another if for that range.
 
@@ -351,7 +351,7 @@ All said and done, you should have 4 properties.
 
 A class method is a method, built like normal. But being build inside of a class, it has access to all the class fields. It will also work with the data associated with the specific instance.
 
-Let's start by adding a method called `DiscountedAmount()`. It should return a double, because we will want to do math with the cauculated amount afterwards.
+Let's start by adding a method called `DiscountedAmount()`. It should return a double, because we will want to do math with the calculated amount afterwards.
 
 
 `Methods`   
@@ -364,11 +364,11 @@ Let's start by adding a method called `DiscountedAmount()`. It should return a d
     }
 ```
 
-This code Mutiplies the current price by the discounted amount. The result is the total amount saved.
+This code Multiplies the current price by the discounted amount. The result is the total amount saved.
 > Ex: Price = 100 and Discount = .1 ( 10 %).  
 > Price * Discount ( 100 * .1 ) = 10
 
-And we will add another method, `CalculateTotalPrice()` that returns the cost after the discount is deducated. 
+And we will add another method, `CalculateTotalPrice()` that returns the cost after the discount is deducted. 
 
 ```csharp
     public double CalculateTotalPrice()
@@ -377,7 +377,7 @@ And we will add another method, `CalculateTotalPrice()` that returns the cost af
     }
 ```
 
-Notice, we use our method we just build, `DiscountedAmount()` inside of our method. This is code reusability. It reduces writing the same equation over again.
+Notice, we use our method we just build, `DiscountedAmount()` inside of our method. This is code re usability. It reduces writing the same equation over again.
 
 
 ### ***Example***
@@ -399,7 +399,7 @@ Notice, we use our method we just build, `DiscountedAmount()` inside of our meth
 [Override To String](../Information/OverrideToString.md)
 
 
-We'll get into more detail in Programming 3, but for reusability there are methods we are allowed to `override`. This means even through we didnt' write the original method, we can change how it behaves.
+We'll get into more detail in Programming 3, but for re usability there are methods we are allowed to `override`. This means even through we didn't' write the original method, we can change how it behaves.
 
 In our code enter the following code.
 
@@ -434,7 +434,7 @@ With this final result, when you call `.ToString()` on your method, it will disp
         double _discount;
 
         // Constructor
-        // Access Modifer - SAME EXACT NAME AS THE CLASS - Take Paremeters
+        // Access Modifier - SAME EXACT NAME AS THE CLASS - Take Parameters
 
         
         public Item(string name, string description, double price, double discount)
@@ -458,11 +458,11 @@ With this final result, when you call `.ToString()` on your method, it will disp
         }
 
         // Overloading A Constructor
-        // Overload a method - You are creating a method that has the same NAME as another method, but different paremeters. That does the same thing but with different data. 
+        // Overload a method - You are creating a method that has the same NAME as another method, but different parameters. That does the same thing but with different data. 
 
         // Properties
         // Get and Set
-        // access modifer - Return Type - Name ( Same as the Field )
+        // access modifier - Return Type - Name ( Same as the Field )
         // DOES NOT TAKE PARAMETERS
         public string Name
         {

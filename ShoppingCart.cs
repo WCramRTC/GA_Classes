@@ -74,27 +74,27 @@ namespace GA_Classes
         } // TotalPrice()
 
 
-        public string Reciept()
+        public string Receipt()
         {
             DateTime dto = DateTime.Now;
-            string fullReciept = "";
+            string fullReceipt = "";
 
-            fullReciept += $"Welcome to {_storeName}\n";
-            fullReciept += $"Date: {dto.ToShortDateString()} {dto.ToLongTimeString()}";
-            fullReciept += $"\n-----\n\n";
-            fullReciept += $"Items\n";
+            fullReceipt += $"Welcome to {_storeName}\n";
+            fullReceipt += $"Date: {dto.ToShortDateString()} {dto.ToLongTimeString()}";
+            fullReceipt += $"\n-----\n\n";
+            fullReceipt += $"Items\n";
             foreach (Item item in _itemsInCart)
             {
-                fullReciept += $"{item.ToString()}\n";
+                fullReceipt += $"{item.ToString()}\n";
             }
 
-            fullReciept += $"\n-----\n\n";
-            fullReciept += $"Number Of Items : {_itemsInCart.Count}\n";
-            fullReciept += $"Total Before Tax : {TotalBeforeTax().ToString("c")}\n";
-            fullReciept += $"Tax : {TaxOnTotal().ToString("c")}\n";
-            fullReciept += $"Total Price : {TotalPrice().ToString("c")}\n";
-            return fullReciept;
-        } // Reciept
+            fullReceipt += $"\n-----\n\n";
+            fullReceipt += $"Number Of Items : {_itemsInCart.Count}\n";
+            fullReceipt += $"Total Before Tax : {TotalBeforeTax().ToString("c")}\n";
+            fullReceipt += $"Tax : {TaxOnTotal().ToString("c")}\n";
+            fullReceipt += $"Total Price : {TotalPrice().ToString("c")}\n";
+            return fullReceipt;
+        } // Receipt
 
     } // class
 

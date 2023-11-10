@@ -80,7 +80,7 @@ namespace GA_Classes
 
         private void btnTotalTransaction_Click(object sender, RoutedEventArgs e)
         {
-            rtbReciept.Text = cart.Reciept();
+            rtbReceipt.Text = cart.Receipt();
         } // btnTotalTransaction_Click
 
         // PreloadInventory
