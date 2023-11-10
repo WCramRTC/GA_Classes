@@ -1,5 +1,17 @@
 ﻿# Step 2 - Item Class
 
+> What is a class? A class is a way we define what an object is to a computer. By creating a class and giving it fields and methods, we tell the computer what information is related to this object, and what it can do.
+
+> A class tends to consist of 4 parts
+
+        1. Fields
+        2. Constructors
+        3. Properties
+        4. Class methods
+
+> We will discuss all of these for our item class in this step. More information can be found in the provided links to the pages on the seperate parts.
+
+
 In this step we are going to create our class, `Item`. This is going to represent an item in a grocery store. 
 
 ---
