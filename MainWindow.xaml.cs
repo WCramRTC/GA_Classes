@@ -36,15 +36,7 @@ namespace GA_Classes
 
             cart = new ShoppingCart("Wills Mart");
 
- 
-
             lbShopping.ItemsSource = cart.ItemsInCart;
-
-            //Item fudge = new Item("Granny Smith", "Tart", 3, .5);
-            //MessageBox.Show(fudge.DiscountedAmount().ToString());
-            //Item apple = new Item("Granny Smith", "Tart", 1.50, .1);
-
-
 
 
         } // MainWindow
