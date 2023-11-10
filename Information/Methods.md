@@ -1,6 +1,6 @@
 ﻿# Class Methods
 
-When a method is a part of a class, it has access to all the fields assoicated with that class, even if they are private. Like properties, this gives the user the ability to perform actions with the code, but still let's us restrict what they can do.
+When a method is a part of a class, it has access to all the fields associated with that class, even if they are private. Like properties, this gives the user the ability to perform actions with the code, but still let's us restrict what they can do.
 
 We'll take a look with our BankAccount class example.
 

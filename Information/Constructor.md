@@ -32,7 +32,7 @@ Constructors let you control what information MUST be added when an object is cr
 | ---      | ---  | ---   | ---     | ---  |
 |   car1       |      |       |         |      |
 
-Here we create a car instance, but it has no values. What if we need to guarentee we have values for at least make and model? We can create a constructor to take make and model.
+Here we create a car instance, but it has no values. What if we need to guarantee we have values for at least make and model? We can create a constructor to take make and model.
 
 #### Basic Car Class with Make and Model Constructor
 ```csharp

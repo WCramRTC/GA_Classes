@@ -1,6 +1,6 @@
 ﻿# Step 4 - Shopping Cart Class
 
-In this step we learn how to next items In items. We create a new class `ShoppingCart`, and add a `List<Item>` to it to replicate how an online shopping cart will work. We use it to hold a seperate list of items ( but which ***Reference*** the same items in memory. ). Then we create methods to calculate the total of our cart, and display all the infomation as a formatted receipt.
+In this step we learn how to next items In items. We create a new class `ShoppingCart`, and add a `List<Item>` to it to replicate how an online shopping cart will work. We use it to hold a separate list of items ( but which ***Reference*** the same items in memory. ). Then we create methods to calculate the total of our cart, and display all the information as a formatted receipt.
 
 ## 1. Create a new class, ShoppingCart
 
@@ -20,7 +20,7 @@ In this step we learn how to next items In items. We create a new class `Shoppin
 3. Create a constructor that takes a single parameter, `storeName`.
     * Inside the constructor
     * Assign the argument to the field, `_storeName = storeName`
-    * Initilaize our new List<Item>, `_itemsInCart = new List<Item>();`
+    * Initialize our new List<Item>, `_itemsInCart = new List<Item>();`
     * Set a value of .1 for the tax ( 10 % ), `_tax = .1;`
 
 ```csharp
@@ -116,19 +116,19 @@ In this step we learn how to next items In items. We create a new class `Shoppin
         ```csharp
             public string Receipt()
             {
-                // This C# object will help us display the exact time the recipet is processed
+                // This C# object will help us display the exact time the receipt is processed
                 DateTime dto = DateTime.Now;
                 // Creating an empty string to start formatting.
                 string fullReceipt = "";
 
-                // Concatenating our store name into our recipet
+                // Concatenating our store name into our receipt
                 fullReceipt += $"Welcome to {_storeName}\n";
                 // Displaying the current day and time on the receipt
                 fullReceipt += $"Date: {dto.ToShortDateString()} {dto.ToLongTimeString()}";
                 fullReceipt += $"\n-----\n\n";
                 fullReceipt += $"Items\n";
 
-                // Using a foreach loop, we go through the items in our cart and concatenate the .ToString() to our recipet string. This will show every item in our cart.
+                // Using a foreach loop, we go through the items in our cart and concatenate the .ToString() to our receipt string. This will show every item in our cart.
                 foreach (Item item in _itemsInCart)
                 {
                     fullReceipt += $"{item.ToString()}\n";
