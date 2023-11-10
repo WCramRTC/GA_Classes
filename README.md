@@ -1,18 +1,34 @@
 # GA_Classes
 
-1. Class
-2. Collection of Classes
-3. Class With Methods
-4. Classes IN Classes
+This assignment will walk you through creating classes ( including explinations about fields, constructors, properties, and methods ). 
+
+You will then add items to a List to replicate a inventory. 
+
+Following this you will create another class that will recplicate an online shopping cart that will hold items you wish to purchase. 
+
+Followed by totaling up the cost and displaying everything as a formatted receipt.
+
+![Final Application](Steps/Images/FinalApplication.gif)
+
+***Full Step By Step***
+
+1. [Step1 Setting Up](Steps/Step1_SettingUp.md)  
+2. [Step2 Item Class](Steps/Step2_ItemClass.md)  
+3. [Step3 Displaying A List Of Item](Steps/Step3_DisplayingAListOfItem.md)  
+4. [Step4 Shopping Cart Class](Steps/Step4_ShoppingCartClass.md)  
+5. [Step5 Displaying Our Reciept](Steps/Step5_DisplayingOurReciept.md)  
 
 ---
 
-## Assignment
+### Below are the steps needed to complete the assignment if you didn't want to go thorugh the Step By Step process.
 
+---
+## [Step1 Setting Up](Steps/Step1_SettingUp.md)
 1. Create a WPF appliation with the name of GA_***YourName***_Classes
 2. Replace `<Grid>` with our new xaml code (Located Below). And double click on the 2 buttons and `lbInventor` to create events. 
 
-
+---
+## [Step2 Item Class](Steps/Step2_ItemClass.md)
 1. Create a class called `Item`
     * Give it 4 [fields](Information/Fields.md)
         1. `string _name` <--- This is for the name of the item
@@ -38,8 +54,69 @@
         * This should display the name, price, Discount, and Total Price
         * Ex:  Name: Granny Smith - Price: $1.50 - Discount: $0.15 - Total Price: $1.35  
         * Make sure to use `.ToString("c");` on your prices to format it to currency
-            
+   
+---
+## [Step3 Displaying A List Of Item](Steps/Step3_DisplayingAListOfItem.md)
+`MainWindow.xaml.cs`
 
+1. Create a global `List<Item> inventory`.
+2. Copy and paste the included `PreloadInventory()` method.
+3. In your `MainWindow()` method call the `PreloadInventory()` method.
+4. Assign your inventory list the the `lbInventory.ItemsSource`.
+5. In your `lbInventory_SelectionChange` event, have the information about the item appear in the `rtbItemDescription` appear.
+
+![Display Full Inventory](Steps/Images/DisplayFullInventory.gif)
+
+---
+## [Step4 Shopping Cart Class](Steps/Step4_ShoppingCartClass.md)
+
+1. Create a new `ShoppingCart` class.
+    1. Fields
+        * `string _storeName;`
+        * `List<Item> _itemsInCart;`
+        * `double _tax;`
+    2. Constructor
+        * Takes one parameter, `string storeName`
+        * Initialize list in constructor, `_itemsInCart = new List<Item>();`
+        * Tax should be set to .1. `_tax = .1;`
+    3. Properties
+        * `string StoreName {get; set;}`
+        * `double ItemsInCart {get; }`
+        * `double Tax {get; }`
+    4. Methods
+        * `AddItem(Item item)` - Add item to shopping cart
+        * `TotalBeforeTax()` - Sum all items in cart.CalculateTotalPrice(), return sum.
+        * `TaxOnTotal()` - Return `TotalBeforeTax() * Tax`
+        * `TotalPrice()` - Return `TotalBeforeTax() + TaxOnTotal()`
+        * `Reciept()` - Return a formatted string of a reciept.
+
+        `Example`
+        > Welcome to Wills Mart  
+        > Date: 11/9/2023 8:25:41 PM  
+        > \-----   
+        > Items  // Should display All items in the cart
+        > Name: Bread - Price: $7.91 - Discount:  $2.93 - Total Price: $4.98  
+        > Name: Tomatoes - Price: $16.43 - Discount:  $9.37 - Total Price: $7.06  
+        > \-----  
+        > Number Of Items : 2  
+        > Total Before Tax : $12.05  
+        > Tax : $1.20  
+        > Total Price : $13.25  
+
+---
+## [Step5 Displaying Our Reciept](Steps/Step5_DisplayingOurReciept.md)
+
+1. In your `btnAddToCart_Click` event, when the user selects an item and clicks "Add To Cart", the item shows up in the shopping cart. It refreshes to show the new item.  
+    1. `lbShopping.Items.Refresh()` used to refresh cart. Put at end of method.
+2. In your `btnTotalTransaction_Click`, call the `cart.Reciept()` and assign the string the `rtbReciept.Text` property.
+
+---
+
+# Final Result
+
+![Final Application](Steps/Images/FinalApplication.gif)
+
+---
 
 Start Xaml Code
 ```html
@@ -70,37 +147,6 @@ Start Xaml Code
 
 ```
 
-1. Create a new C# class called `Item`.
-
-```csharp
-
-	public class Item {
-
-		// Fields
-		string _name;
-		string _description;
-		double _price;
-		double _discount;
-
-		// Constructor
-		public Item(string name, string description, double price, double discount) {
-
-			_name = name;
-			_description = description;
-			_price = price;
-			_discount = price;
-		}
-
-
-		// Properties
-		public string Name { get; set; }
-		public string Description { get; set; }
-		public double Price { get; set; }
-		public double Discount { get; set; }
-
-	}
-
-```
 
 `Preload method`
 ```csharp
